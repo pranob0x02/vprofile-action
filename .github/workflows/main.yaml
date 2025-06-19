@@ -92,7 +92,7 @@ jobs:
           kubectl create secret docker-registry regcred \
           --docker-server=${{ secrets.REGISTRY }} \
           --docker-username=AWS \
-          --docker-password=$(aws ecr get-login-password --region ${{ env.AWS_REGION }})
+          --docker-password=$(aws ecr get-login-password)
 
       # deploy using helm
       - name: Deploy Helm
